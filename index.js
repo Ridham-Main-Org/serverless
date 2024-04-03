@@ -34,7 +34,7 @@ functions.cloudEvent('helloPubSub', async cloudEvent => {
         console.log("hashedtoken",hashedToken);
         const expirationTimestamp = Date.now() + 2 * 60 * 1000; // 2 minutes from now
         console.log("expirationTimestamp is",expirationTimestamp);
-        const verificationLink = `http://my-webapp.me:3000/v1/user/verify?token=${hashedToken[0].id}`;
+        const verificationLink = `https://my-webapp.me/v1/user/verify?token=${hashedToken[0].id}`;
 
         await mg.messages.create('my-webapp.me', {
           from: 'Excited User <mailgun@my-webapp.me>',
